@@ -8,6 +8,6 @@ public:
             nums[i] = count;
         }
         
-        return nums;        
+        return nums;
     }
 };
