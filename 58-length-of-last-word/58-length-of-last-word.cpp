@@ -7,7 +7,7 @@ public:
             if(s[i] == ' ' && flag){
                 return count;
             }
-            if(s[i] != ' '){
+            if(s[i] != ' '){ 
                 count++;
                 flag = true;
             }
