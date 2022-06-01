@@ -1,0 +1,1 @@
+const twoSum=function(nums,target){const map = new Map();for(let i=0; i<nums.length; i++){let element=target-nums[i];if(map.get(element)!=undefined)return [map.get(element),i];map.set(nums[i],i);}};
