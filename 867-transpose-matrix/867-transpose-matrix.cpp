@@ -9,7 +9,8 @@ public:
             for(int j=0; j<col; j++){
                 ans[i][j] = matrix[j][i];
             }            
-        }            
+        }        
+        
         return ans;        
     }
 };
