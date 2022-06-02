@@ -10,7 +10,6 @@ public:
                 ans[i][j] = matrix[j][i];
             }            
         }            
-        
         return ans;        
     }
 };
