@@ -1,6 +1,6 @@
 class Solution {
 private: 
-    void solve(vector<int> nums, int index, vector<vector<int>>& ans){
+    void solve(vector<int>& nums, int index, vector<vector<int>>& ans){
         if(index >= nums.size()){
             ans.push_back(nums);
             return;
@@ -9,7 +9,7 @@ private:
         for(int i=index; i<nums.size(); i++){
             swap(nums[i], nums[index]);
             solve(nums, index+1, ans);
-            swap(nums[i], nums[index]);
+            swap(nums[i], nums[index]); 
         }
     }
 public:
