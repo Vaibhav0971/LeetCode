@@ -20,7 +20,7 @@ public:
         set<string> ans;
         map<int, bool> flag;
         
-        solve(flag, tiles, output, ans);
+        solve(flag, tiles, output, ans); 
         
         return ans.size();        
     }
