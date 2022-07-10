@@ -1,10 +1,6 @@
 class Solution {
 
-int solve(int k, int index, vector<int>& arr){
-    // cout<<"INDEX - "<<index<<endl;
-    // for(int i=0; i<arr.size(); i++) cout<<arr[i];
-    // cout<<endl;
-    
+int solve(int k, int index, vector<int>& arr){    
     if(arr.size() == 1) return arr[0];
     
     int newIndex = index + k - 1;
