@@ -4,10 +4,10 @@ class Solution {
             return 0;
         }
         
-        int left = nums[start] + min(solve(nums, start+2, end), solve(nums, start+1, end-1));
-        int right = nums[end] + min(solve(nums, start, end-2), solve(nums, start+1, end-1));
+        int choice1 = nums[start] + min(solve(nums, start+2, end), solve(nums, start+1, end-1));
+        int choice2 = nums[end] + min(solve(nums, start, end-2), solve(nums, start+1, end-1));
         
-        return max(left, right);
+        return max(choice1, choice2);
     }
     
     
