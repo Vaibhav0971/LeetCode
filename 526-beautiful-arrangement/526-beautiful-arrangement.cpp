@@ -1,5 +1,5 @@
 class Solution {
-    void solve(int index, vector<int> nums, int& ans){
+    void solve(int index, vector<int>& nums, int& ans){
         if(index >= nums.size()){            
             ans++;
             return;
