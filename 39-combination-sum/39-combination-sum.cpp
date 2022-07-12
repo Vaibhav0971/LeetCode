@@ -45,9 +45,9 @@ public:
         vector<int> output;
         int index = 0;
         
-        // sort(candidates.begin(), candidates.end());
+        sort(candidates.begin(), candidates.end());
         
-        solve2(index, target, candidates, output, ans);
+        solve(index, target, candidates, output, ans);
         
         return ans;
     }
