@@ -1,5 +1,6 @@
 class Solution {
     
+    // My Solution
     void solve(int index, int target, vector<int>& c, vector<int>& output, vector<vector<int>>& ans){
         if(index >= c.size()) return;
         
@@ -19,6 +20,24 @@ class Solution {
         }        
     }
     
+    // Love Solution
+    void solve2(int index, int target, vector<int>& c, vector<int>& output, vector<vector<int>>& ans){
+        if(target == 0){
+            ans.push_back(output);
+            return;
+        }
+        
+        if(target < 0 || index >= c.size())
+            return;
+        
+        // exclude
+        solve2(index+1, target, c, output, ans);
+        
+        //include
+        output.push_back(c[index]);
+        solve2(index, target-c[index], c, output, ans);
+        output.pop_back();
+    }
     
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
@@ -26,9 +45,9 @@ public:
         vector<int> output;
         int index = 0;
         
-        sort(candidates.begin(), candidates.end());
+        // sort(candidates.begin(), candidates.end());
         
-        solve(index, target, candidates, output, ans);
+        solve2(index, target, candidates, output, ans);
         
         return ans;
     }
