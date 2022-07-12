@@ -13,7 +13,7 @@ class Solution {
         }
         
         // add closeing parentheses while checking the closing bracket does not exceed the opening
-        if(close > 0 && !((n-open) <= (n-close))){
+        if(close > 0 && ((n-open) > (n-close))){
             output.push_back(')');
             solve(n, open, close-1, output, ans);
             output.pop_back();
