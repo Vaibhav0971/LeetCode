@@ -1,14 +1,14 @@
 class Solution {
     
     void solve(int index, int target, vector<int>& c, vector<int>& output, vector<vector<int>>& ans){
-        // cout<<target;
-        
         if(index >= c.size()) return;
         
         if(target == 0){
             ans.push_back(output);
             return;
         }
+        
+        if(target < c[0]) return;
         
         for(int i=index; i<c.size(); i++){
             if((target - c[i]) >= c[0] || (target - c[i]) == 0){
