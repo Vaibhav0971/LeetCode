@@ -21,13 +21,9 @@ public:
         for(int i=1; i<=n; i++)
             nums.push_back(i);
         
-        int ans = 0;
-        int index = 0;
+        int ans = 0, index = 0;
         
         solve(index, nums, ans);
-        
-        // for(auto i : ans)
-        //     cout<<i<<", ";
         
         return ans;        
     }
