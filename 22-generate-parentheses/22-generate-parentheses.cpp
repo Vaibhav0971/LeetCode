@@ -1,9 +1,5 @@
 class Solution {
     void solve(int n, int open, int close, string output, vector<string>& ans){
-        // if(output == ""){
-        //     output = "(";
-        //     open--;
-        // }
         if(open == 0 && close == 0){
             ans.push_back(output);
             return;
@@ -16,7 +12,7 @@ class Solution {
             output.pop_back();
         }
         
-        // add closeing parentheses
+        // add closeing parentheses while checking the closing bracket does not exceed the opening
         if(close > 0 && !((n-open) <= (n-close))){
             output.push_back(')');
             solve(n, open, close-1, output, ans);
