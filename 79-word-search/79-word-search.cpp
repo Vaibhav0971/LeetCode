@@ -34,7 +34,7 @@ public:
         
         for(int i=0; i<board.size(); i++){
             for(int j=0; j<board[i].size(); j++){
-                if(board[i][j] == word[0] && solve(i, j, 0, board, word)){
+                if(solve(i, j, 0, board, word)){
                     return true;
                 }
             }
