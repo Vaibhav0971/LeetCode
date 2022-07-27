@@ -25,6 +25,7 @@ public:
         
         int len = getLength(head);
         k = k % len;
+        
         if(k == 0) return head;
         
         int rotate = len - k;
