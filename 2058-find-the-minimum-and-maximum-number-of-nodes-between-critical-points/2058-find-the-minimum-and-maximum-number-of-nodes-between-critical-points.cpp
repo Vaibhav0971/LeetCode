@@ -40,7 +40,7 @@ public:
             ans.push_back(-1);
             ans.push_back(-1);
             return ans;
-        }
+        } 
         
         ans.push_back(minD);
         ans.push_back(maxD);
