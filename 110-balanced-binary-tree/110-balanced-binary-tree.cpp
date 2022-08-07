@@ -9,22 +9,27 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
-    int height(TreeNode* &root){
-        if(root == NULL) return 0;
+class Solution {    
+    pair<int, bool> solve(TreeNode* &root){
+        if(root == NULL) {
+            return make_pair(0, true);
+        }
         
-        return 1 + max(height(root -> left), height(root -> right));
+        pair<int, bool> left = solve(root -> left);
+        pair<int, bool> right = solve(root -> right);
+        
+        bool diff = abs(left.first - right.first) <= 1;        
+        
+        if(left.second && right.second && diff){
+            return make_pair(max(left.first, right.first) + 1, true);
+        }
+        else{
+            return make_pair(max(left.first, right.first) + 1, false);          
+        }
     }
     
 public:
     bool isBalanced(TreeNode* root) {
-        if(root == NULL) return true;
-        
-        bool left = isBalanced(root -> left);
-        bool right = isBalanced(root -> right);
-        
-        bool diff = abs(height(root -> left) - height(root -> right)) <= 1;        
-        
-        return left && right && diff;
+        return solve(root).second;
     }
 };
