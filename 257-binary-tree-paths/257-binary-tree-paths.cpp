@@ -10,25 +10,18 @@
  * };
  */
 class Solution {
-    void solve(TreeNode* root, vector<string>& output, string str){
-        if(root -> left == NULL && root -> right == NULL){
-            if(str.length() > 0){
-                str += "->";
-                str += to_string(root -> val);
-            }
-            else{
-                str += to_string(root -> val);
-            }
-            output.push_back(str);
-            return;
-        }
-        
+    void solve(TreeNode* root, vector<string>& output, string str){        
         if(str.length() > 0){
             str += "->";
             str += to_string(root -> val);
         }
         else{
             str += to_string(root -> val);
+        }
+        
+        if(root -> left == NULL && root -> right == NULL){
+            output.push_back(str);
+            return;
         }
         
         if(root -> left) 
