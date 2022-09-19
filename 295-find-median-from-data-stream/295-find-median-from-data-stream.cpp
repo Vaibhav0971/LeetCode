@@ -52,7 +52,7 @@ public:
     }
     
     double findMedian() {
-        return median;
+        return median; 
     }
 };
 
